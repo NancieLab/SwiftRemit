@@ -38,7 +38,7 @@ jobs:
     name: Every alert has a severity, team, and runbook section
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v4
         with:
@@ -55,7 +55,7 @@ jobs:
       PROMETHEUS_VERSION: '2.52.0'
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install promtool
         run: |
@@ -83,7 +83,7 @@ jobs:
     env:
       ALERTMANAGER_VERSION: '0.27.0'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v4
         with:
@@ -116,7 +116,7 @@ jobs:
     name: Grafana dashboards are valid JSON with required fields
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Validate dashboard JSON
         run: |

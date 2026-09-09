@@ -28,7 +28,7 @@ jobs:
       sha_short: ${{ steps.meta.outputs.sha_short }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Set image metadata
         id: meta
@@ -91,7 +91,7 @@ jobs:
     name: Pact — can I deploy to staging?
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: can-i-deploy
         env:
           PACT_BROKER_BASE_URL: ${{ vars.PACT_BROKER_BASE_URL }}
@@ -110,7 +110,7 @@ jobs:
       deployment_id: ${{ steps.deployment.outputs.deployment_id }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Create GitHub deployment
         uses: chrnorm/deployment-action@v2
@@ -211,7 +211,7 @@ jobs:
     if: ${{ github.event.inputs.skip_smoke != 'true' }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Run smoke tests
         env:
@@ -251,7 +251,7 @@ jobs:
     if: ${{ always() && needs.deploy.result == 'success' && needs.smoke-tests.result == 'failure' }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Re-deploy last-known-good images
         uses: appleboy/ssh-action@v1.0.3

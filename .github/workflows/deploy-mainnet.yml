@@ -80,7 +80,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: gate-tests
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: dtolnay/rust-toolchain@stable
 
@@ -111,7 +111,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: gate-audit
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Verify reproducible build script exists
         run: |
@@ -174,7 +174,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: gate-testnet-dry-run
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Verify mainnet-checklist workflow passed on this SHA
         env:
@@ -205,7 +205,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: require-checklist
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: can-i-deploy to mainnet
         env:
           PACT_BROKER_BASE_URL: ${{ vars.PACT_BROKER_BASE_URL }}
@@ -220,7 +220,7 @@ jobs:
     outputs:
       wasm_sha256: ${{ steps.hash.outputs.wasm_sha256 }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: dtolnay/rust-toolchain@stable
         with:
@@ -287,7 +287,7 @@ jobs:
     outputs:
       contract_id: ${{ steps.deploy.outputs.contract_id }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Download WASM artifact
         uses: actions/download-artifact@v4
@@ -403,7 +403,7 @@ jobs:
     environment:
       name: mainnet
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install Stellar CLI
         run: |
@@ -447,7 +447,7 @@ jobs:
       - post-deploy-smoke
     if: always() && needs.deploy-contract.result == 'success'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 

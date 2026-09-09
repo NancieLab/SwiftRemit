@@ -21,7 +21,7 @@ jobs:
     name: Root markdown allowlist (SR-115)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Enforce root-level markdown allowlist
         run: bash scripts/check-root-markdown.sh
@@ -30,7 +30,7 @@ jobs:
     name: One H1 per docs file (SR-219)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Check docs/ for accidentally concatenated documents
         run: bash scripts/check-doc-h1.sh

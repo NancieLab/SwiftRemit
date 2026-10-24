@@ -59,7 +59,7 @@ jobs:
       - name: Generate Frontend pact
         run: npm run test:pact
       - name: Upload frontend pact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: pact-frontend
           path: pacts/SwiftRemitFrontend-SwiftRemitAPI.json
@@ -92,7 +92,7 @@ jobs:
       - name: Generate SDK pact
         run: npm run test:pact
       - name: Upload SDK pact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: pact-sdk
           path: pacts/SwiftRemitSDK-SwiftRemitAPI.json
@@ -125,7 +125,7 @@ jobs:
       - name: Generate Mobile pact
         run: npm run test:pact
       - name: Upload mobile pact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: pact-mobile
           path: pacts/SwiftRemitMobile-SwiftRemitAPI.json

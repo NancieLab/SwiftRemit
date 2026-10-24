@@ -265,7 +265,7 @@ jobs:
           fi
 
       - name: Upload WASM artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: swiftremit-mainnet-wasm-${{ github.sha }}
           path: target/wasm32-unknown-unknown/release/swiftremit.wasm
@@ -488,7 +488,7 @@ jobs:
           fi
 
       - name: Upload deployment record artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: mainnet-deployment-record-${{ github.sha }}
           path: deployment-record.json

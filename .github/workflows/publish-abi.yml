@@ -272,7 +272,7 @@ jobs:
           echo "VERSIONED_ABI=${VERSIONED_FILE}" >> "$GITHUB_ENV"
 
       - name: Upload ABI as workflow artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: swiftremit-abi-${{ github.ref_name }}
           path: abi/

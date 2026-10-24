@@ -40,7 +40,7 @@ jobs:
       github.event.inputs.suite == 'rpc'
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v4
         with:
@@ -110,7 +110,7 @@ jobs:
       github.event.inputs.suite == 'database'
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v4
         with:
@@ -179,7 +179,7 @@ jobs:
       github.event.inputs.suite == 'anchor'
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v4
         with:
@@ -249,7 +249,7 @@ jobs:
       github.event.inputs.suite == 'websocket'
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v4
         with:

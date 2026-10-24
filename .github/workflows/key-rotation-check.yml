@@ -17,7 +17,7 @@ jobs:
     name: Verify no key rotation is overdue (SR-111)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Check Key Inventory rotation dates
         run: bash scripts/check-key-rotation-due.sh
